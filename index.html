@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>探索太阳系：八大行星的奥秘</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Orbitron:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="space-noise" aria-hidden="true"></div>
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="返回首页">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>探索太阳系</strong>
+          <small>SCIENCE · SPACE · FUTURE</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#overview">太阳系概览</a>
+        <a href="#planets">八大行星</a>
+        <a href="#compare">知识对比</a>
+        <a href="#explore">互动探索</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-orbits" aria-hidden="true"></div>
+        <div class="hero-content reveal">
+          <p class="eyebrow">SOLAR SYSTEM EXHIBITION</p>
+          <h1>探索太阳系：<br />八大行星的奥秘</h1>
+          <p class="hero-copy">
+            从炽热的水星到遥远的海王星，了解太阳系中每一颗行星的独特故事。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#overview">开始探索</a>
+            <a class="ghost-btn" href="#planets">查看八大行星</a>
+          </div>
+        </div>
+        <div class="mission-panel reveal" aria-label="太阳系快速数据">
+          <span>太阳系年龄</span>
+          <strong>约 46 亿年</strong>
+          <span>八大行星</span>
+          <strong>8 颗</strong>
+        </div>
+      </section>
+
+      <section class="section overview" id="overview">
+        <div class="section-heading reveal">
+          <p class="eyebrow">ORBITAL OVERVIEW</p>
+          <h2>太阳系总览</h2>
+          <p>
+            太阳系是一个以太阳为中心的天体系统，包含行星、卫星、小行星、彗星以及大量尘埃和气体。行星并不是静止在太空中，而是在引力作用下沿各自轨道围绕太阳公转。
+          </p>
+        </div>
+        <div class="overview-grid">
+          <article class="overview-copy glass-card reveal">
+            <h3>像一座运行中的宇宙钟表</h3>
+            <p>
+              太阳提供巨大的引力，把行星约束在轨道上。每颗行星距离太阳不同，公转速度和一年长度也不同。越靠近太阳的行星通常公转越快，越遥远的行星绕太阳一圈所需时间越长。
+            </p>
+            <div class="stat-row">
+              <div><strong>200+</strong><span>已知卫星</span></div>
+              <div><strong>100万+</strong><span>小行星数量</span></div>
+              <div><strong>8</strong><span>主要行星</span></div>
+            </div>
+          </article>
+          <figure class="overview-visual reveal">
+            <img src="assets/solar-overview.png" alt="太阳位于中心、八大行星沿轨道运行的太阳系示意图" />
+            <figcaption>行星按照距离太阳由近到远依次排列，轨道并非实物线，而是帮助理解运动路径的示意。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section planets-section" id="planets">
+        <div class="section-heading reveal">
+          <p class="eyebrow">PLANET JOURNEY</p>
+          <h2>八大行星探索之旅</h2>
+          <p>点击任意行星卡片，可展开更完整的科普信息。悬停时行星会轻微放大，模拟展厅中的发光展示台。</p>
+        </div>
+        <div class="planet-controls reveal" aria-label="行星筛选">
+          <button class="filter-btn active" data-filter="all" type="button">全部</button>
+          <button class="filter-btn" data-filter="rocky" type="button">岩石行星</button>
+          <button class="filter-btn" data-filter="gas" type="button">巨行星</button>
+          <button class="filter-btn" data-filter="ice" type="button">冰巨星</button>
+        </div>
+        <div class="planet-grid" id="planetGrid"></div>
+        <aside class="planet-detail glass-card" id="planetDetail" aria-live="polite"></aside>
+      </section>
+
+      <section class="section compare" id="compare">
+        <div class="section-heading reveal">
+          <p class="eyebrow">DATA COMPARISON</p>
+          <h2>知识对比区</h2>
+          <p>把八大行星放在同一张表里，更容易看出距离、大小、温度和运动周期的巨大差异。</p>
+        </div>
+        <div class="comparison-board reveal">
+          <div class="scale-panel">
+            <h3>行星大小直观比较</h3>
+            <div class="scale-bars" id="scaleBars"></div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>行星</th>
+                  <th>距离太阳</th>
+                  <th>平均直径</th>
+                  <th>温度</th>
+                  <th>公转周期</th>
+                  <th>卫星</th>
+                  <th>行星环</th>
+                </tr>
+              </thead>
+              <tbody id="planetTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section interactive" id="explore">
+        <div class="quiz-bg" aria-hidden="true"></div>
+        <div class="quiz-content reveal">
+          <p class="eyebrow">INTERACTIVE MISSION</p>
+          <h2>你最适合探索哪颗行星？</h2>
+          <p>
+            通过三个简单选择，发现与你性格最契合的太阳系目的地，开启一段专属的深空探索之旅。
+          </p>
+          <div class="quiz-card" id="quizCard">
+            <h3 id="quizQuestion">你更喜欢哪种探索环境？</h3>
+            <div class="quiz-options" id="quizOptions"></div>
+            <div class="quiz-result" id="quizResult"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section finale">
+        <div class="finale-inner reveal">
+          <p class="eyebrow">WHY WE EXPLORE</p>
+          <h2>每一颗行星，都是宇宙写给人类的一封信。</h2>
+          <p>
+            探索太阳系，不只是认识远方的星球，也是理解我们所在的地球。越了解行星的差异，我们越能珍惜地球独特的水、空气、生命与稳定环境。
+          </p>
+          <a class="primary-btn" href="#top">继续了解宇宙知识</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
