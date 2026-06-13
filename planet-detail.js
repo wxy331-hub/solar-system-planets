@@ -1,9 +1,9 @@
-const planetDetails = {
+﻿const planetDetails = {
   mercury: {
     name: "水星",
     english: "Mercury",
     order: "距离太阳最近的第 1 颗行星",
-    image: "../assets/mercury.png",
+    image: "../assets/mercury.webp",
     theme: "closest",
     tag: "岩石行星 · 极端温差 · 撞击坑世界",
     lead:
@@ -45,7 +45,7 @@ const planetDetails = {
     name: "金星",
     english: "Venus",
     order: "距离太阳第 2 颗行星",
-    image: "../assets/venus.png",
+    image: "../assets/venus.webp",
     theme: "hot",
     tag: "岩石行星 · 厚重大气 · 强温室效应",
     lead:
@@ -87,7 +87,7 @@ const planetDetails = {
     name: "地球",
     english: "Earth",
     order: "距离太阳第 3 颗行星",
-    image: "../assets/earth.png",
+    image: "../assets/earth.webp",
     theme: "life",
     tag: "岩石行星 · 液态水 · 已知生命家园",
     lead:
@@ -129,7 +129,7 @@ const planetDetails = {
     name: "火星",
     english: "Mars",
     order: "距离太阳第 4 颗行星",
-    image: "../assets/mars.png",
+    image: "../assets/mars.webp",
     theme: "red",
     tag: "岩石行星 · 红色荒原 · 未来探索前哨",
     lead:
@@ -171,7 +171,7 @@ const planetDetails = {
     name: "木星",
     english: "Jupiter",
     order: "距离太阳第 5 颗行星",
-    image: "../assets/jupiter.png",
+    image: "../assets/jupiter.webp",
     theme: "giant",
     tag: "气态巨行星 · 大红斑 · 强磁场",
     lead:
@@ -213,7 +213,7 @@ const planetDetails = {
     name: "土星",
     english: "Saturn",
     order: "距离太阳第 6 颗行星",
-    image: "../assets/saturn.png",
+    image: "../assets/saturn.webp",
     theme: "ring",
     tag: "气态巨行星 · 壮观行星环 · 多卫星系统",
     lead:
@@ -255,7 +255,7 @@ const planetDetails = {
     name: "天王星",
     english: "Uranus",
     order: "距离太阳第 7 颗行星",
-    image: "../assets/uranus.png",
+    image: "../assets/uranus.webp",
     theme: "tilt",
     tag: "冰巨星 · 横躺自转 · 蓝绿色大气",
     lead:
@@ -297,7 +297,7 @@ const planetDetails = {
     name: "海王星",
     english: "Neptune",
     order: "距离太阳最远的第 8 颗行星",
-    image: "../assets/neptune.png",
+    image: "../assets/neptune.webp",
     theme: "deep",
     tag: "冰巨星 · 高速风暴 · 深蓝边界",
     lead:
@@ -454,3 +454,4 @@ navToggle.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("open");
   navToggle.setAttribute("aria-expanded", String(isOpen));
 });
+

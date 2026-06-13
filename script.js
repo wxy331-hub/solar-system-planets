@@ -1,10 +1,10 @@
-const planets = [
+﻿const planets = [
   {
     id: "mercury",
     name: "水星",
     order: "第 1 颗行星",
     type: "rocky",
-    image: "assets/mercury.png",
+    image: "assets/mercury.webp",
     distance: "0.39 AU",
     diameter: "4,879 km",
     temperature: "-173°C 至 427°C",
@@ -21,7 +21,7 @@ const planets = [
     name: "金星",
     order: "第 2 颗行星",
     type: "rocky",
-    image: "assets/venus.png",
+    image: "assets/venus.webp",
     distance: "0.72 AU",
     diameter: "12,104 km",
     temperature: "约 465°C",
@@ -38,7 +38,7 @@ const planets = [
     name: "地球",
     order: "第 3 颗行星",
     type: "rocky",
-    image: "assets/earth.png",
+    image: "assets/earth.webp",
     distance: "1.00 AU",
     diameter: "12,742 km",
     temperature: "平均约 15°C",
@@ -55,7 +55,7 @@ const planets = [
     name: "火星",
     order: "第 4 颗行星",
     type: "rocky",
-    image: "assets/mars.png",
+    image: "assets/mars.webp",
     distance: "1.52 AU",
     diameter: "6,779 km",
     temperature: "平均约 -63°C",
@@ -72,7 +72,7 @@ const planets = [
     name: "木星",
     order: "第 5 颗行星",
     type: "gas",
-    image: "assets/jupiter.png",
+    image: "assets/jupiter.webp",
     distance: "5.20 AU",
     diameter: "139,820 km",
     temperature: "云顶约 -110°C",
@@ -89,7 +89,7 @@ const planets = [
     name: "土星",
     order: "第 6 颗行星",
     type: "gas",
-    image: "assets/saturn.png",
+    image: "assets/saturn.webp",
     distance: "9.58 AU",
     diameter: "116,460 km",
     temperature: "云顶约 -140°C",
@@ -106,7 +106,7 @@ const planets = [
     name: "天王星",
     order: "第 7 颗行星",
     type: "ice",
-    image: "assets/uranus.png",
+    image: "assets/uranus.webp",
     distance: "19.22 AU",
     diameter: "50,724 km",
     temperature: "约 -224°C",
@@ -123,7 +123,7 @@ const planets = [
     name: "海王星",
     order: "第 8 颗行星",
     type: "ice",
-    image: "assets/neptune.png",
+    image: "assets/neptune.webp",
     distance: "30.05 AU",
     diameter: "49,244 km",
     temperature: "约 -214°C",
@@ -176,7 +176,7 @@ function renderPlanets(filter = "all") {
     .map(
       (planet) => `
       <a class="planet-card reveal" data-id="${planet.id}" href="planets/${planet.id}.html">
-        <img src="${planet.image}" alt="${planet.name}高清行星插图" />
+        <img src="${planet.image}" alt="${planet.name}高清行星插图" loading="lazy" />
         <small>${planet.order}</small>
         <h3>${planet.name}</h3>
         <p>${planet.intro.slice(0, 58)}...</p>
@@ -304,3 +304,4 @@ renderTable();
 renderScaleBars();
 renderQuiz();
 observeReveals();
+
