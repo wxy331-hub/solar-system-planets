@@ -165,7 +165,6 @@ const quizSteps = [
 ];
 
 const grid = document.querySelector("#planetGrid");
-const detail = document.querySelector("#planetDetail");
 const table = document.querySelector("#planetTable");
 const scaleBars = document.querySelector("#scaleBars");
 const navToggle = document.querySelector(".nav-toggle");
@@ -176,44 +175,17 @@ function renderPlanets(filter = "all") {
   grid.innerHTML = visible
     .map(
       (planet) => `
-      <button class="planet-card reveal" data-id="${planet.id}" type="button">
+      <a class="planet-card reveal" data-id="${planet.id}" href="planets/${planet.id}.html">
         <img src="${planet.image}" alt="${planet.name}高清行星插图" />
         <small>${planet.order}</small>
         <h3>${planet.name}</h3>
         <p>${planet.intro.slice(0, 58)}...</p>
-        <span class="fact-pill">有趣知识：${planet.fun}</span>
-      </button>
+        <span class="fact-pill">进入详情：${planet.fun}</span>
+      </a>
     `
     )
     .join("");
   observeReveals();
-}
-
-function openPlanet(id) {
-  const planet = planets.find((item) => item.id === id);
-  if (!planet) return;
-  document.querySelectorAll(".planet-card").forEach((card) => {
-    card.classList.toggle("active", card.dataset.id === id);
-  });
-  detail.classList.add("open");
-  detail.innerHTML = `
-    <img src="${planet.image}" alt="${planet.name}详情图像" />
-    <div>
-      <p class="eyebrow">${planet.order}</p>
-      <h3>${planet.name}</h3>
-      <p>${planet.intro}</p>
-      <span class="fact-pill">有趣知识：${planet.fun}</span>
-      <div class="detail-facts">
-        <div><span>距离太阳</span><strong>${planet.distance}</strong></div>
-        <div><span>平均直径</span><strong>${planet.diameter}</strong></div>
-        <div><span>温度</span><strong>${planet.temperature}</strong></div>
-        <div><span>公转周期</span><strong>${planet.orbit}</strong></div>
-        <div><span>自转周期</span><strong>${planet.rotation}</strong></div>
-        <div><span>卫星/行星环</span><strong>${planet.moons} / ${planet.rings}</strong></div>
-      </div>
-    </div>
-  `;
-  detail.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
 function renderTable() {
@@ -306,9 +278,6 @@ function chooseQuiz(index) {
 }
 
 document.addEventListener("click", (event) => {
-  const card = event.target.closest(".planet-card");
-  if (card) openPlanet(card.dataset.id);
-
   const filter = event.target.closest(".filter-btn");
   if (filter) {
     document.querySelectorAll(".filter-btn").forEach((button) => button.classList.remove("active"));

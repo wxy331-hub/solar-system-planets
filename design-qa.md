@@ -11,6 +11,14 @@ Completed checks:
 - Runtime initialization was simulated with a minimal DOM stub. The script generated 8 planet cards, 8 comparison table rows, 8 scale rows, and the first quiz question with 3 options.
 - Project files and image assets were synced to `E:\workspace\solar-system-planets`.
 
+Follow-up checks after detail-page expansion:
+
+- Added 8 independent planet detail pages under `planets/`.
+- Updated homepage planet cards to link to those detail pages.
+- JS syntax check passed for `script.js` and `planet-detail.js`.
+- Homepage runtime simulation generated 8 linked planet cards, 8 comparison rows, and quiz options.
+- Local route check for `http://127.0.0.1:4173/planets/mars.html` returned 200.
+
 Manual QA recommended:
 
 - Open `http://127.0.0.1:4173` locally and verify the desktop hero matches the selected immersive cosmic exhibition direction.
